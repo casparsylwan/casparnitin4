@@ -14,7 +14,8 @@ Imports: ggplot2
 RoxygenNote: 6.1.0
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 Depends:
     ggplot2
 VignetteBuilder: knitr
