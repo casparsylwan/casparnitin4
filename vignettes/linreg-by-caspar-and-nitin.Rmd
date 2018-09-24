@@ -9,6 +9,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+[![Travis build status](https://travis-ci.org/casparsylwan/casparnitin4.svg?branch=master)](https://travis-ci.org/casparsylwan/casparnitin4)
+
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
