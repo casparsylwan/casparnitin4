@@ -66,7 +66,7 @@ linreg <- setRefClass("linreg",
                         plot  = function(){
                           "plots the residuals versus fitted"
                           df<-data.frame(predicted, residuals)
-                          ggplot(data = df, aes(x =predicted, y=residuals))  },
+                          ggplot2::ggplot(data = df, aes(x =predicted, y=residuals))  },
                         summary=function(){
 
                           df<-data.frame(betahat, se_betas, t_values, p_values)
