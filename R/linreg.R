@@ -66,7 +66,7 @@ linreg <- setRefClass("linreg",
                         plot  = function(){
                           "plots the residuals versus fitted"
                           df<-data.frame(predicted, residuals)
-                          ggplot(data = df) + aes(x =predicted, y=residuals, group=2) + geom_point()+geom_abline(intercept = 0, slope = 0 ) },
+                          ggplot(data = df, aes(x =predicted, y=residuals))  },
                         summary=function(){
 
                           df<-data.frame(betahat, se_betas, t_values, p_values)
@@ -81,7 +81,13 @@ linreg <- setRefClass("linreg",
                         },
                         print=function(){
                           form<-format(formula)
-                          base::print(paste0("formula = ",form, ", data = ", dataname))
+#                          form3<-format(formula[3])
+
+
+                          base::print(paste0("linreg","(formula = ",form, ", data = ", dataname,")"))
+#                          base::print(paste("(Intercept ) " ,form3,))
+
+
                         },
                         initialize = function(form, data){
                           "Formula for reggression"
