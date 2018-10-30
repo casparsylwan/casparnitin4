@@ -71,10 +71,14 @@ linreg <- setRefClass("linreg",
 
                           df<-data.frame(betahat, se_betas, t_values, p_values)
                           rownames(df)<-colnames(indep)
+                          namn<-colnames(indep)
                           #df<-as.table(df)
-                          base::print(df)
+                          #base::print(df)
 
 
+                          base::print(sprintf("%s %1.2f %1.2f %1.2f . ***",colnames(indep), betahat,se_betas, t_values))
+                          #base::print(sprintf("%s %f1.1 %f1.1 %f1.1 . ***",colnames(indep), linreg_mod$betahat,linreg_mod$se_betas, linreg_mod$t_values ))
+                          base::print(sprintf("Residual standard error: %1.1f on %g degrees of freedom", std_e, deg_fre))
 
 
 
@@ -84,8 +88,9 @@ linreg <- setRefClass("linreg",
 #                          form3<-format(formula[3])
 
 
-                          base::print(paste0("linreg","(formula = ",form, ", data = ", dataname,")"))
-#                          base::print(paste("(Intercept ) " ,form3,))
+
+                          base::print(paste0("linreg","(formula = ",form, ", data = ", dataname,")\n\n"))
+                          base::print(paste0("(Intercept )" ,form))
 
 
                         },
